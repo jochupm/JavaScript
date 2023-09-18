@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Example of Description for SEO purposes">
+    <meta name="keywords"  content="DATA, R, web development, portfolio, Freelance, etc.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/logo-color.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&display=swap"
+        rel="stylesheet">
+
+    <title>Emma Johnson - Freelance Data Scientist & Web Developer</title>
+</head>
+
+<body>
+    <section class="page-content">
+    <section class="nav-bar">
+        <header>
+            <nav>
+                <ul class="menu-1">
+                    <li class="logo-nav-bar" href="#"> <img class="logo" src="./images/logo-color.png" alt="Logo"> </li>
+                    <li class="nav-bar-1"> <a class="text" href="#">Home</a> </li>
+                    <li class="nav-bar-2"> <a class="text" href="./pages/services.html">Services</a> </li>
+                    <li class="nav-bar-3"> <a class="text" href="./pages/about me.html">About me</a> </li>
+                    <li class="nav-bar-4">Portfolio
+                        <ul class="dropdown">
+                          <li><a class="text" href="./pages/data_analysis.html">Data Analytics</a></li>
+                          <li><a class="text" href="./pages/web_development.html">Web Development</a></li>
+                        </ul>
+                      </li>                    <li class="nav-bar-5"> <a class="text" href="./pages/blog.html">Blog</a> </li>
+                    <li class="nav-bar-6"> <a class="text" href="./pages/contact.html">Contact</a> </li>
+                    <li class="nav-bar-7"> <a class="text" href="./pages/SP.html">SP</a> </li>
+                </ul>
+            </nav>
+        </header>
+    </section>
+    <main>
+
+        <section class="front-page">
+
+            <form id="quoteForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" autocomplete="off" required><br>
+        
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" autocomplete="off" required><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" autocomplete="off" required><br>
+        
+                <label for="services">Services Required:</label>
+                <select id="services" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="data analysis projects">Data Analysis Projects</option>
+                    <option value="visualization projects">Visualization Projects</option>
+                    <option value="prediction models">Prediction Models</option>
+                    <option value="training and workshops">Training and Workshops</option>
+                    <option value="full-day training">Full-day Training</option>
+                </select><br>
+        
+                <label for="region">Region:</label>
+                <select id="region" required >
+                    <option value="">--Please choose an option--</option>
+                    <option value="north america">North America</option>
+                    <option value="south america">South America</option>
+                    <option value="europe">Europe</option>
+                    <option value="oceania">Oceania</option>
+                    <option value="africa">Africa</option>
+                </select><br>
+        
+                <button type="submit" id="finishQuote">Get Quote</button>
+
+                <div class="quoteDetail">
+                    <ul id="quoteDisplay">
+                        <!-- The quote is shown here -->
+                    </ul>
+                    <hr>
+                </div>
+            </form>
+        </section>
+    </main>
+    <section class="footer-content">
+        <footer class="cont">
+            <div class="row">
+                <div class="contact">
+                    Emma Johnson<br>
+                <span class="e-mail">info@emmajohnson.com</span><br>
+                Location: Nova Scotia region (Canada) or remote work<br>
+                </div>
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/emmajohnson/"><i class="fa fa-linkedin-square fa-3x social"></i></a>
+                    <a href="mailto:info@emmajohnson.com"><i class="fa fa-envelope-square fa-3x social"></i></a>
+                </div>
+                <div class="copyright">© 2023 Emma Johnson</div>
+            </div>
+            <a href="#"><div class="back-to-top" style="display: block;"><i class="fa fa-arrow-up fa-1x"></i></div></a>
+        </footer>
+    </section>
+</section>
+<script src="./JS/app.js"></script>
+</body>
+
+</html>
