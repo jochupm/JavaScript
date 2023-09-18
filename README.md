@@ -1,0 +1,12 @@
+# JavaScript
+1. fetch con asyn/ await y try catch (PENDIENTE)
+2. Llamar a una API O archivo JSON en una carpeta con los productos y hacer fetch ahi (PENDIENTE)
+3. Incorporar libreria (PENDIENTE)
+4. Metodos de array y de objetos (CONFIRMAR)
+5. Buscar romper el codigo y validaciones (OK)
+6. NO variables con VAR (OK)
+7. Aplicar desestructuracion del objeto (PENDIENTE)
+8. Generacion del DOM a traves de JS (OK)
+9. Eventos (OK)
+10. If ternario (PENDIENTE)
+11. Uso del local Storage OBLIGATORIO (tiene que haber getItem, setItem y remove) (PENDIENTE)
