@@ -1,0 +1,40 @@
+{
+    "precios": {
+      "data analysis projects": {
+        "north america": 900,
+        "south america": 850,
+        "europe": 950,
+        "oceania": 850,
+        "africa": 900
+      },
+      "visualization projects": {
+        "north america": 700,
+        "south america": 650,
+        "europe": 950,
+        "oceania": 850,
+        "africa": 900
+      },
+      "prediction models": {
+        "north america": 800,
+        "south america": 750,
+        "europe": 850,
+        "oceania": 750,
+        "africa": 800
+      },
+      "training and workshops": {
+        "north america": 1000,
+        "south america": 950,
+        "europe": 1050,
+        "oceania": 950,
+        "africa": 1000
+      },
+      "full-day training": {
+        "north america": 1100,
+        "south america": 1050,
+        "europe": 1150,
+        "oceania": 1050,
+        "africa": 1100
+      }
+    }
+  }
+  
