@@ -1,7 +1,7 @@
 let priceData; 
 
 
-// Obtener elementos del formulario
+// Obtain elements from the form
 const nameInput = document.getElementById('name');
 const lastNameInput = document.getElementById('lastName');
 const emailInput = document.getElementById('email');
@@ -20,15 +20,15 @@ emailInput.addEventListener('blur', function () {
   }
 });
 
-// Crear un array para las cotizaciones
+// Create an array for the quotes
 let quotes = [];
 
-// Función para guardar cotizaciones en el almacenamiento local
+// Function for saving the quotes in the local storage
 function saveQuotesToLocalStorage() {
   localStorage.setItem('quotes', JSON.stringify(quotes));
 }
 
-// Función para cargar cotizaciones desde el almacenamiento local
+// Function for loading the quotes in the local storage
 function loadQuotesFromLocalStorage() {
   const quotesJson = localStorage.getItem('quotes');
   if (quotesJson) {
@@ -37,7 +37,7 @@ function loadQuotesFromLocalStorage() {
   }
 }
 
-// Función para actualizar la visualización de las cotizaciones
+// Function for updating quotes' visualizations
 function updateQuote() {
   quoteDisplay.innerHTML = '';
 
@@ -46,7 +46,7 @@ function updateQuote() {
   quotes.forEach(function (quote, index) {
     totalAmount += quote.pricing;
 
-    // Obtener la fecha actual
+    // Obtain current date
     const currentDate = new Date();
     const day = currentDate.getDate();
     const options = { month: 'short' };
@@ -72,18 +72,18 @@ function updateQuote() {
       </div>
     </div>`;
 
-    // Obtener el botón de actualización
+    // Obtain refresh button
     const refreshButton = document.createElement('button');
     refreshButton.className = 'refresh-button';
     refreshButton.innerText = 'Delete quote';
 
-    // Agregar evento de clic al botón de actualización
+    // Add refresh button
     refreshButton.addEventListener('click', function () {
-      // Llamar a la función para limpiar los datos del formulario
+      // Call the funstion that clears the form
       clearForm();
     });
 
-    // Función para limpiar el formulario
+    // Function for clearing the form
     function clearForm() {
       nameInput.value = '';
       lastNameInput.value = '';
@@ -91,7 +91,7 @@ function updateQuote() {
       servicesInput.value = '';
       regionInput.value = '';
 
-      // Eliminar registros de cotizaciones
+      // Delete quotes' previous registers
       quotes = [];
       saveQuotesToLocalStorage();
 
@@ -105,7 +105,7 @@ function updateQuote() {
   totalAmountElement.innerText = totalAmount.toFixed(2);
 }
 
-// Evento para guardar la cotización
+// Event for saving the quote
 finishQuoteBtn.addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -117,42 +117,42 @@ finishQuoteBtn.addEventListener('click', function (e) {
     timer: 1500
   })
 
-  // Obtener los valores del formulario
+  // Obtain values from the form
   const name = nameInput.value;
   const lastName = lastNameInput.value;
   const email = emailInput.value;
   const services = servicesInput.value;
   const region = regionInput.value;
 
-  // Validar campos vacíos
+  // Validate empty fields
   if (!name || !lastName || !email || !services || !region) {
     alert('Por favor, complete todos los campos.');
     return;
   }
 
-  // Obtener precios según los servicios y la región
+  // Obtain prices according to the selected services and regions
   const pricing = getPrice(services, region);
 
-  // Crear objeto de cotización
+  // Create quotes' object
   const quote = {
-    name, // Utilizar el valor del input en lugar del JSON
-    lastName, // Utilizar el valor del input en lugar del JSON
-    email, // Utilizar el valor del input en lugar del JSON
+    name, // takes the value from inut *not from JSON
+    lastName, // takes the value from inut *not from JSON
+    email, // takes the value from inut *not from JSON
     services,
     region,
     pricing,
   };
 
-  // Agregar cotización al array
+  // Add quote to the array
   quotes.push(quote);
 
-  // Guardar array de cotizaciones en el almacenamiento local
+  // Save quotes' array in the local storage
   saveQuotesToLocalStorage();
 
-  // Actualizar la visualización de las cotizaciones
+  // Update quotes' visual
   updateQuote();
 
-  // Limpiar el formulario
+  // Clean the form
   nameInput.value = '';
   lastNameInput.value = '';
   emailInput.value = '';
@@ -160,32 +160,32 @@ finishQuoteBtn.addEventListener('click', function (e) {
   regionInput.value = '';
 });
 
-// Obtener precios según los servicios y la región
+// Obtain pricing according to services and region
 function getPrice(services, region) {
   if (priceData.hasOwnProperty(services) && priceData[services].hasOwnProperty(region)) {
     return priceData[services][region];
   } else {
-    // Manejar el caso en que no se encuentre el precio
-    return 0; // O cualquier valor por defecto que desees
+    // Handle errors when the price is not found
+    return 0; 
   }
 }
-// Función para cargar los datos de precios desde el JSON
+// Function for loading the pricing info from the JSON file
 const fetchData = async () => {
   try {
     const res = await fetch('http://localhost:5500/JSON/quotes.json'); 
     const data = await res.json();
     
-    // Almacenar los datos del archivo JSON en una variable global llamada priceData
+    // Save JSON data in a variable called priceData
     priceData = data.precios; 
 
-    // Luego, cargar las cotizaciones desde el almacenamiento local
+    // Then save quotes from the lcoal storage
     loadQuotesFromLocalStorage();
   } catch (error) {
     console.error('Error al obtener los datos del archivo JSON:', error);
   }
 };
 
-// Llamar a la función fetchData para cargar los datos desde el JSON
+// Call the fetchData function to load data from the JSON file
 fetchData();
 
 
